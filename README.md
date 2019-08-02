@@ -24,27 +24,23 @@ Use the functions in `simple-statsd.core` to report metrics to statsd. Tags can 
 ```
 
 ### Ring middleware for instrumenting APIs
-`simple-statsd.ring` has two middlewares that will instrument response times and throughput per response code for your HTTP APIs.
+`simple-statsd.ring` has a middleware that will instrument response times and throughput per response code for your HTTP APIs.
 
-Wrap your handler with `simple-statsd.ring/named-handler` and give it a name, to be used in the `statsd` metric names.
-
-Further down the middleware chain (possibly with other middleware in between), wrap your handler with `simple-statsd.ring/wrap-statsd-reporting` with a metric prefix to report metrics to `statsd`. Only handlers wrapped with `named-handler` will be instrumented.
+Wrap your handler with `simple-statsd.ring/wrap-statsd-reporting` with a metric prefix and an API name to report metrics to `statsd`.
 
 Example using `bidi`:
 ```clojure
 (require '[simple-statsd.ring :as statsd-ring])
 
 (def ^:private routes
-  ;; Wrap your handler with named-handler and give it a name
-  ["/" {"ping" (statsd-ring/named-handler (constantly {:status 200
-                                           :body   "pong"})
-                                          "ping")}])
+  ;; Wrap your handler and give it a name
+  ["/" {"ping" (statsd-ring/wrap-statsd-reporting (constantly {:status 200
+                                                               :body   "pong"})
+                                                  "my-app" "ping")}])
 
 (def handler (-> routes
                  bidi.ring/make-handler
                  wrap-coerce-key-names
                  wrap-api-middleware
-                 wrap-handle-exceptions
-                 ;; After applying other middleware, use the wrap-statsd-reporting middleware
-                 statsd-ring/wrap-statsd-reporting))
+                 wrap-handle-exceptions))
 ```
