@@ -28,3 +28,18 @@
    (gauge metric value {}))
   ([metric value tags]
    (statsd/gauge metric value 1.0 (build-tags tags))))
+
+(defn time-fn
+  [f metric tags]
+  (let [start-time (System/nanoTime)
+        response (f)
+        response-time (- (System/nanoTime) start-time)]
+    (timing metric (quot response-time 1000000) tags)
+    response))
+
+(defmacro with-timing
+  [metric-name tags & body]
+  `(time-fn (fn []
+              ~@body)
+            ~metric-name
+            ~tags))

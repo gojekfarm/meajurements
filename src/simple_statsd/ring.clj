@@ -5,10 +5,10 @@
   "Instruments response times and API status codes. Wrap your handler function with this."
   [handler app-name api-name]
   (fn [request]
-    (let [start-time (System/currentTimeMillis)
+    (let [start-time (System/nanoTime)
           {:keys [status] :as response} (handler request)]
       (core/timing (str app-name ".api.response-time." api-name)
-                   (- (System/currentTimeMillis) start-time)
+                   (quot (- (System/nanoTime) start-time) 1000000)
                    {:api-name api-name
                     :status   status
                     :app-name app-name})
