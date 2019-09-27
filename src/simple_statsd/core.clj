@@ -5,10 +5,17 @@
   [host port]
   (statsd/setup host port))
 
+(defn- coerce-value
+  [v]
+  (if (or (keyword? v)
+          (symbol? v))
+    (name v)
+    v))
+
 (defn- build-tags
   [tags]
   (map (fn [[key value]]
-         (str (name key) ":" value))
+         (str (name key) ":" (coerce-value value)))
        tags))
 
 (defn increment
