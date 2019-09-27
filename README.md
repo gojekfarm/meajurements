@@ -5,8 +5,7 @@ A wrapper over the statsd API that also supports pushing tags in the `dogstatsd`
 Does not add any additional abstractions on top of what `statsd`/`telegraf` supports.
 
 ## Usage
-Add `[tech.gojek/simple-statsd "2.0.0"]` to your dependencies.
-
+Add `[tech.gojek/simple-statsd "3.0.0"]` to your dependencies.
 
 Call `simple-statsd.core/setup` once to configure the `statsd` host and port.
 
