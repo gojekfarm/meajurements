@@ -1,14 +1,10 @@
 # simple-statsd
 
-A wrapper over the statsd API that also supports pushing tags in the `dogstatsd` format (which will work with the GO-JEK telegraf instances).
-
-Does not add any additional abstractions on top of what `statsd`/`telegraf` supports.
+A wrapper over https://github.com/pyr/clj-statsd that also supports pushing tags in the `dogstatsd` format. It also includes a Ring middleware which instruments response times, HTTP response codes and throughput for your HTTP APIs.
 
 ## Usage
 Add `[tech.gojek/simple-statsd "3.0.0"]` to your dependencies.
-
 Call `simple-statsd.core/setup` once to configure the `statsd` host and port.
-
 
 ### Basic reporting
 Use the functions in `simple-statsd.core` to report metrics to statsd. Tags can optionally be passed as maps.
