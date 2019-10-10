@@ -1,7 +1,7 @@
-(ns simple-statsd.ring-test
+(ns meajurements.ring-test
   (:require [clojure.test :refer :all]
-            [simple-statsd.ring :as ring]
-            [simple-statsd.core :as core]))
+            [meajurements.ring :as ring]
+            [meajurements.core :as core]))
 
 (defn- remove-index
   "Removes the nth element from a sequence."

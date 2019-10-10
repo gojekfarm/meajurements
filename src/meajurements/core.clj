@@ -1,4 +1,4 @@
-(ns simple-statsd.core
+(ns meajurements.core
   (:require [clj-statsd :as statsd]))
 
 (defn setup

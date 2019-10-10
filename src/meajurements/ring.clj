@@ -1,5 +1,5 @@
-(ns simple-statsd.ring
-  (:require [simple-statsd.core :as core]))
+(ns meajurements.ring
+  (:require [meajurements.core :as core]))
 
 (defn wrap-statsd-reporting
   "Instruments response times and API status codes. Wrap your handler function with this."
