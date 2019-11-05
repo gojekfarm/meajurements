@@ -1,5 +1,14 @@
 # meajurements
 
+<p>
+  <a href="https://travis-ci.com/gojek/ziggurat">
+    <img src="https://travis-ci.com/gojekfarm/meajurements.svg?branch=master" alt="Build Status" />
+  </a>
+  <a href='https://clojars.org/tech.gojek/ziggurat'>
+    <img src='https://img.shields.io/clojars/v/tech.gojek/meajurements' alt='Clojars Project' />
+  </a>
+</p>
+
 A wrapper over https://github.com/pyr/clj-statsd that also supports pushing tags in the `dogstatsd` format. It also includes a Ring middleware which instruments response times, HTTP response codes and throughput for your HTTP APIs.
 
 ## Usage

@@ -1,0 +1,16 @@
+language: clojure
+
+jdk:
+  - openjdk8
+  - openjdk11
+
+stages:
+  - test
+  - name: deploy
+    if: (repo == gojekfarm/meajurements) AND (tag IS present)
+
+jobs:
+  include:
+  - stage: deploy
+    jdk: openjdk11
+    script: lein deploy clojars
