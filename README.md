@@ -1,10 +1,10 @@
 # meajurements
 
 <p>
-  <a href="https://travis-ci.com/gojek/ziggurat">
+  <a href="https://travis-ci.com/gojekfarm/meajurements">
     <img src="https://travis-ci.com/gojekfarm/meajurements.svg?branch=master" alt="Build Status" />
   </a>
-  <a href='https://clojars.org/tech.gojek/ziggurat'>
+  <a href='https://clojars.org/tech.gojek/meajurements'>
     <img src='https://img.shields.io/clojars/v/tech.gojek/meajurements' alt='Clojars Project' />
   </a>
 </p>
