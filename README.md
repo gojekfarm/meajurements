@@ -1,6 +1,6 @@
 # meajurements
 
-<p align="center">
+<p>
   <a href="https://travis-ci.com/gojek/ziggurat">
     <img src="https://travis-ci.com/gojekfarm/meajurements.svg?branch=master" alt="Build Status" />
   </a>
