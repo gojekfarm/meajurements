@@ -24,6 +24,12 @@
   ([metric tags]
    (statsd/increment metric 1 1.0 (build-tags tags))))
 
+(defn decrement
+  ([metric]
+   (decrement metric {}))
+  ([metric tags]
+   (statsd/decrement metric 1 1.0 (build-tags tags))))
+
 (defn timing
   ([metric-name time-ms]
    (timing metric-name time-ms {}))
