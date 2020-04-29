@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## 3.1.0
+* Add decrement function. 
+
 ## 3.0.0
 * Coerce tag values using `name` if they are keywords. This means that keyword tag values won't be prefixed with `:` anymore.
 
