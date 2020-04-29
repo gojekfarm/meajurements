@@ -12,7 +12,7 @@
 A wrapper over https://github.com/pyr/clj-statsd that also supports pushing tags in the `dogstatsd` format. It also includes a Ring middleware which instruments response times, HTTP response codes and throughput for your HTTP APIs.
 
 ## Usage
-Add `[tech.gojek/meajurements "3.0.0"]` to your dependencies.
+Add `[tech.gojek/meajurements "3.1.0"]` to your dependencies.
 Call `meajurements.core/setup` once to configure the `statsd` host and port.
 
 ### Basic reporting
