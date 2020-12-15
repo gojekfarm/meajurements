@@ -1,4 +1,4 @@
-(defproject tech.gojek/meajurements "3.0.0"
+(defproject tech.gojek/meajurements "3.2.0"
   :description "A statsd client that supports tagged metrics in the dogstatsd format"
   :url "https://github.com/gojekfarm/meajurements"
   :license {:name "Apache License, Version 2.0"

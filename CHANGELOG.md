@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## 3.2.0
+* Pass tag function to middleware
+
 ## 3.1.0
 * Add decrement function. 
 
